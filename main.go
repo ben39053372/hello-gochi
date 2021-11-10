@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"net/http"
 	"time"
 
@@ -12,8 +11,6 @@ import (
 
 
 func main() {
-
-	flag.Parse()
 
 	r := chi.NewRouter()
 
