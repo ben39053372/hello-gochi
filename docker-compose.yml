@@ -2,8 +2,9 @@ version: "3.9" # optional since v1.27.0
 services:
   db:
     image: postgres
+    restart: always
     environment:
-      POSTGRES_PASSWORD: root
+      POSTGRES_PASSWORD: 39053372
     ports:
       - "5432:5432"
   dbGUI:
@@ -12,8 +13,6 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: "ben39053372@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "ben39053372"
-      POSTGRES_USERS: "ben:39053372|local:local"
-      POSTGRES_DATABASES: "example:ben|example2:local"
     ports:
       - "16543:80"
     depends_on:

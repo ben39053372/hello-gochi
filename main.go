@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
 	"github.com/ben39053372/hello-gochi/routers"
+	"github.com/ben39053372/hello-gochi/utils"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
@@ -12,7 +14,11 @@ import (
 
 func main() {
 
+	fmt.Println("Starting Server")
+
 	r := chi.NewRouter()
+
+	utils.ConnectDataBase()
 
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
